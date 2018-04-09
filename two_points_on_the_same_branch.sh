@@ -292,6 +292,7 @@ old_opam_root="$working_dir/opam.OLD"
 export OPAMROOT="$new_opam_root"
 initial_opam_packages="camlp5 ocamlfind batteries"
 
+opam repo add local-ppedrot https://github.com/ppedrot/opam-repository.git
 echo n | opam init -v -j$number_of_processors --comp $new_ocaml_switch
 echo $PATH
 . "$OPAMROOT"/opam-init/init.sh
@@ -325,6 +326,7 @@ opam pin --kind=version add coq $coq_opam_version
 
 export OPAMROOT="$old_opam_root"
 
+opam repo add local-ppedrot https://github.com/ppedrot/opam-repository.git
 echo n | opam init -v -j$number_of_processors --comp $old_ocaml_switch
 echo $PATH
 . "$OPAMROOT"/opam-init/init.sh
